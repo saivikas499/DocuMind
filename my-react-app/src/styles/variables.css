@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap');
+
+:root, [data-theme="light"] {
+  --bg: #faf8f3;
+  --bg-1: #f5efe0;
+  --bg-2: #ede5d0;
+  --bg-3: #e0d5bc;
+  --border: rgba(0,0,0,0.08);
+  --border-hover: rgba(0,0,0,0.16);
+  --text-1: #1a1208;
+  --text-2: #5a4a2e;
+  --text-3: #9a8a6e;
+  --accent: #b8860b;
+  --accent-hover: #9a7009;
+  --accent-soft: rgba(184,134,11,0.1);
+  --accent-glow: rgba(184,134,11,0.2);
+  --success: #2d7a3a;
+  --success-soft: rgba(45,122,58,0.1);
+  --danger: #c0392b;
+  --danger-soft: rgba(192,57,43,0.1);
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Jost', sans-serif;
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --transition: all 0.2s ease;
+}
+
+[data-theme="dark"] {
+  --bg: #111111;
+  --bg-1: #1a1a1a;
+  --bg-2: #222222;
+  --bg-3: #2a2a2a;
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.16);
+  --text-1: #f5f5f5;
+  --text-2: #aaaaaa;
+  --text-3: #666666;
+  --accent: #ffffff;
+  --accent-hover: #dddddd;
+  --accent-soft: rgba(255,255,255,0.07);
+  --accent-glow: rgba(255,255,255,0.1);
+  --success: #4ade80;
+  --success-soft: rgba(74,222,128,0.1);
+  --danger: #f87171;
+  --danger-soft: rgba(248,113,113,0.1);
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+}

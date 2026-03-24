@@ -8,7 +8,7 @@ const router = express.Router()
 const upload = multer({ storage: multer.memoryStorage() })
 
 const supabase = createClient(
-  process.env.SUPABASE_URL,
+  process.env.SUPABASE_URL ,
   process.env.SUPABASE_SERVICE_ROLE_KEY
 )
 

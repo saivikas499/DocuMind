@@ -1,0 +1,438 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+}
+
+.sidebar {
+  width: 240px;
+  background: var(--bg-1);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.sidebarLogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+}
+
+.sidebarLogoIcon {
+  width: 26px;
+  height: 26px;
+  background: var(--accent);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  box-shadow: var(--shadow-sm);
+  color: var(--bg);
+}
+
+.sidebarLogoText {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  color: var(--text-1);
+}
+
+.uploadBtn {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uploadBtn:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.uploadBtn:disabled {
+  background: var(--bg-2);
+  color: var(--text-3);
+  cursor: not-allowed;
+}
+
+.sectionLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0 12px;
+  margin-bottom: 8px;
+}
+
+.docList {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.docItem {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  margin-bottom: 2px;
+  transition: var(--transition);
+}
+
+.docItem:hover {
+  background: var(--bg-2);
+  border-color: var(--border);
+}
+
+.docIcon {
+  font-size: 12px;
+  color: var(--text-3);
+  flex-shrink: 0;
+}
+
+.docName {
+  font-size: 12px;
+  color: var(--text-2);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.docDelete {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-size: 16px;
+  padding: 0 2px;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.docItem:hover .docDelete {
+  opacity: 1;
+}
+
+.docDelete:hover {
+  color: var(--danger);
+}
+
+.sidebarBottom {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebarActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+}
+
+.userEmail {
+  font-size: 11px;
+  color: var(--text-3);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userAvatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.logoutBtn {
+  width: 100%;
+  padding: 7px 12px;
+  background: transparent;
+  color: var(--text-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoutBtn:hover {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border-color: rgba(192,57,43,0.2);
+}
+
+/* Main */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+/* Upload progress strip */
+.uploadStrip {
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.uploadRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.uploadName {
+  font-size: 12px;
+  color: var(--text-2);
+  min-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.uploadBarWrap {
+  flex: 1;
+  height: 4px;
+  background: var(--bg-3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.uploadBar {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  transition: width 0.4s ease;
+}
+
+.uploadBarDone {
+  background: var(--success);
+}
+
+.uploadBarError {
+  background: var(--danger);
+}
+
+.uploadPct {
+  font-size: 11px;
+  font-family: monospace;
+  min-width: 36px;
+  text-align: right;
+  color: var(--text-3);
+}
+
+.uploadPctDone { color: var(--success); }
+.uploadPctError { color: var(--danger); }
+
+.uploadDismiss {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-size: 16px;
+  padding: 0 2px;
+}
+
+.uploadDismiss:hover {
+  color: var(--text-1);
+}
+
+/* Content area */
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* Empty / drop zone */
+.dropZone {
+  width: 100%;
+  max-width: 480px;
+  padding: 60px 40px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  animation: fadeUp 0.6s ease both;
+}
+
+.dropZone:hover,
+.dropZoneActive {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.dropIcon {
+  width: 56px;
+  height: 56px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-glow);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 24px;
+  color: var(--accent);
+}
+
+.dropTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+}
+
+.dropSub {
+  font-size: 13px;
+  color: var(--text-3);
+  line-height: 1.6;
+}
+
+.dropLink {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Documents grid */
+.docsArea {
+  width: 100%;
+  animation: fadeUp 0.5s ease both;
+}
+
+.docsHeader {
+  margin-bottom: 24px;
+}
+
+.docsTitle {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  color: var(--text-1);
+  margin-bottom: 4px;
+}
+
+.docsMeta {
+  font-size: 13px;
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slotsBadge {
+  padding: 2px 10px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-glow);
+  color: var(--accent);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.docCard {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+  animation: fadeUp 0.4s ease both;
+}
+
+.docCard:hover {
+  background: var(--bg-2);
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.docCardIcon {
+  width: 36px;
+  height: 44px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-glow);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.docCardName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-1);
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.docCardDate {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.docCardAction {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--accent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.docCard:hover .docCardAction {
+  opacity: 1;
+}
